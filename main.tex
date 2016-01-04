@@ -7,6 +7,8 @@
 \title{Industrial Placement Accreditation Module (IPAM)}
 \author{Charles Pigott}
 
+\newcommand{\paragraphnl}[1]{\paragraph{#1}\mbox{}\\}
+
 \begin{document}
 
 \maketitle
@@ -59,11 +61,92 @@
 
 \subsection*{Learning plan}
 \subsubsection*{Technical}
+	As part of my placement, I hope to learn how a hosting provider operates on
+	a day-to-day basis and how problems are dealt with. I'll have a main role
+	as a Sysadmin, which will mean learning about how to maintain servers and
+	fix any problems that may occur.
+	As Bytemark own their own data centre and quite a lot of the software used
+	is developed in-house, I have the opportunity to learn about the
+	``full stack'' of how a hosting provider works, from the software used to
+	manage the virtual machines and physical hardware and the processes used in
+	developing it, down to the physical machines and cabling itself.
+
 \subsubsection*{Non-technical}
+	On the non-technical side of things, I hope that I can improve how I
+	interact with people. As I will be working in an office environment with
+	others, I'll have to learn to carry out my superior's instructions and how
+	to ask others for help when needed. I'll also regularly be talking to
+	customers via phone and email, answering their questions and solving their
+	problems.
 
-\noindent\begin{tabular}{ll}
+	I also hope to pick up a better working routine, as I am expected to do
+	37.5 hours of work every week, and be in the office 9am to 5pm when it is
+	my turn on the rota.
 
-\end{tabular}
+\section*{Part 3 --- Learning Journal}
+\paragraphnl{July}
+	The very first thing I was asked to do was install a Linux distribution on
+	the laptop I'd been given to use during my time at Bytemark. This was a
+	good refresher for me, as it had been a while since I last did a fresh
+	install of a Linux OS, especially with the additional requirement of having
+	to use full disk encryption. Initially, I tried to install Arch Linux on
+	the laptop, but after being unsuccessful twice and getting conscious of the
+	time it was taking, I opted for installing Debian, which while not as
+	`bleeding edge' as Arch, has a simpler installer with a builtin option for
+	disk encryption.
+
+	One of the first tasks I was given was to create a system that could send
+	newsletters to customers. This was beneficial to me as it would mean
+	talking to several different people in the company for access and
+	clarifying requirements. This enabled me to get to know the people I would
+	be working with and let me know the particular system they manage. In
+	particular, provisioning of the system that the newsletter software,
+	assigning it a subdomain and getting access to the central database server
+	all meant talking to different people. A newsletter system would help the
+	company to easily contact all existing customers with any updates; new
+	product announcements being what was wanted in this case.
+
+	Another job was organising the migration of VMs running on a particular
+	host to another, as the existing host had a hardware fault. These VMs were
+	running on an older platform and so were not able to be live migrated
+	across like the newer platform. Doing this would mean downtime for the
+	customers, so they would have to be contacted in advance. As this migration
+	was necessary due to a hardware fault, they would only be given a days
+	notice. After getting the list of customer's emails, I wrote a script to
+	generate emails with their name and virtual machine name, so it was a bit
+	more personal. This gave me further reason to get to know my colleagues and
+	was my first time interacting with customers, as if any of them replied
+	wanting their VM to be migrated earlier (usually as the specified time was
+	inconvenient to them), I'd have to email back confirming that I'd done what
+	they'd asked.
+
+\paragraphnl{August}
+	This month was my first time on support, where my primary role would be to
+	answer the phones and answer emails. Taking phone calls wasn't something I
+	was very comfortable with, so this was a good opportunity to properly get
+	used to it and learn to think fast enough (or be prepared with the
+	necessary information in front of me) so I could answer the customer
+	properly. Support is something Bytemark prides itself on, and for many
+	customers the excellent support is the main reason they choose Bytemark as
+	a hosting provider, so it's important for the company that customer's
+	questions are answered quickly, correctly, and in a friendly manner.
+
+\paragraphnl{September}
+	In September, it came to be my turn to be on out-of-hours support for the
+	week.
+
+\paragraphnl{October}
+- ip stuff
+\paragraphnl{November}
+- review?
+\paragraphnl{December}
+\paragraphnl{January}
+\paragraphnl{February}
+\paragraphnl{March}
+\paragraphnl{April}
+\paragraphnl{May}
+\paragraphnl{June}
+\paragraphnl{July}
 
 
 \end{document}
