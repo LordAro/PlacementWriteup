@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[T1]{fontenc} % Make sure the font is rendered nicely
 \usepackage{enumitem} % list indentation
-\usepackage[margin=2cm]{geometry}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{booktabs}
 
 \title{Industrial Placement Accreditation Module (IPAM)}
@@ -67,7 +67,7 @@
 	fix any problems that may occur.
 	As Bytemark own their own data centre and quite a lot of the software used
 	is developed in-house, I have the opportunity to learn about the
-	``full stack'' of how a hosting provider works, from the software used to
+	`full stack' of how a hosting provider works, from the software used to
 	manage the virtual machines and physical hardware and the processes used in
 	developing it, down to the physical machines and cabling itself.
 
@@ -100,11 +100,11 @@
 	talking to several different people in the company for access and
 	clarifying requirements. This enabled me to get to know the people I would
 	be working with and let me know the particular system they manage. In
-	particular, provisioning of the system that the newsletter software,
-	assigning it a subdomain and getting access to the central database server
-	all meant talking to different people. A newsletter system would help the
-	company to easily contact all existing customers with any updates; new
-	product announcements being what was wanted in this case.
+	particular, provisioning of the system that the newsletter software would
+	be running on, getting it assigned to a domain and getting access to the
+	central database server all meant talking to different people. A newsletter
+	system would help the company to easily contact all existing customers with
+	any updates; new product announcements being what was wanted in this case.
 
 	Another job was organising the migration of VMs running on a particular
 	host to another, as the existing host had a hardware fault. These VMs were
@@ -146,27 +146,80 @@
 	was good practice at setting a good schedule and getting enough sleep, as I
 	was getting woken at all hours by alerts.
 
+	At the end of the month, I was enrolled on a week long Networking course
+	with several of my colleagues. This covered basically the whole range of
+	networking systems, from how TCP packets are converted into wire signals
+	and back again, to at a high level how ISPs use BGP to communicate with
+	each other and tell each other where the best routes are to a target
+	server, essentially `what makes the Internet work'. The whole course was
+	very interesting, if intensive. It reminded me that I will always be
+	learning new things and as such will need to know how to learn effectively.
+	For Bytemark, if I have a better understanding of how networks work and are
+	put together, I can work more effectively as a Sysadmin, being better at
+	diagnosing issues such as why one server isn't talking to another.
+
 \paragraphnl{October}
 	For my first major development project, I was tasked with creating a system
 	for managing Bytemark's IP addresses. As a hosting provider, Bytemark has a
 	lot of IP addresses allocated to different machines which need keeping
 	track of. Currently, there are 2 different stores for these IP addresses
-	that are completely separate, which among other things makes checking if an
-	IP address is already in use by something else. Therefore, checking whether
-	an IP address is already used is very slow in comparison to everything else
-	(for example in the virtual machine imaging process). Centralising a store
-	of IP addresses and where they're routed to would simplify this greatly and
-	make certain processes faster and apart from anything else simplify working
-	out where IP addresses go.
+	that are completely separate. This, among other things, makes checking if
+	an IP address is already in use by something else more difficult than it
+	should be and rather slow (for example in the virtual machine imaging
+	process). Centralising a store of IP addresses and where they're routed to
+	would simplify this greatly and make certain processes faster and apart
+	from anything else simplify working out where IP addresses go.
 
-	A major part of this is, something.
-- review?
+	For this, I initially began programming my own system, however it was soon
+	pointed out to me that there was an existing open source project that
+	looked like it could do most of what was wanted of my own program. This
+	taught me to make sure I'm not doing unnecessary work and not `reinventing
+	the wheel' as often tends to happen in computer systems. Programmers tend
+	to not take the time to understand existing code bases, dismissing them as
+	badly made and insisting that it gets rewritten. Often it is more effective
+	cost-wise and time-wise to work out the problem areas of an existing code
+	base and fix them than it is to entirely rewrite it. Testing the open
+	source software myself made me more certain that this was worth using for
+	our purposes, so the decision was made to start converting the existing
+	databases into the open source project's format.
+
+	This month I also had my 3 month review, signifying the end of the
+	probationary time on my contract. This was a time for me and my supervisor
+	to review how I'd been getting on in the company and was achieving what was
+	expected of me and what I expected to be achieving. For the company, this
+	ensures all their employees are happy with their work and are working well.
+	It's also for looking forward, what is expected to have been achieved by
+	the time of the next review (for me, this would be at the end of my
+	placement).
+
 \paragraphnl{November}
-- anything of note? can't remember
-\paragraphnl{December}
-- anything of note? can't remember
+	Around this time, the lead developer at Bytemark got very keen on having a
+	proper deployment system, with staging servers and production servers
+	being completely separate. As Bytemark has the ability to easily start up
+	new systems for just a single application. To use this setup properly,
+	a deployment program was made use of, using Ansible. This enables you to
+	completely wipe an old system, reimage it and then deploy your program with
+	a single command. Of course, a staging server needs different information
+	(which databases to connect to and so on) than the production server, which
+	is where this Ansible deployment program comes in. All of this showed me
+	how a proper deployment setup works, and the reasons why it's necessary ---
+	a staging server running on completely separate systems allows you to test
+	things safely and not have to worry about serious bugs affecting customers.
+
+%\paragraphnl{December}
+%-wfh?\\
+%-quiet?
+
 \paragraphnl{January}
-- leeds?
+	Notable this month was me travelling to Leeds with Bytemark's Network
+	Engineer, to help him install a new switch as part of expanding Bytemark's
+	`core network'. This was a good opportunity to learn more about how the
+	Internet works at a very abstract level, where all the ISPs peer with (or
+	`connect to') each other. This area is very interesting to me as it
+	actually involves the `people who make the internet work' and I would like
+	to learn more about it later on.
+
+% continuous deployment?
 %\paragraphnl{February}
 %\paragraphnl{March}
 %\paragraphnl{April}
