@@ -93,18 +93,34 @@
 	the laptop, but after being unsuccessful twice and getting conscious of the
 	time it was taking, I opted for installing Debian, which while not as
 	`bleeding edge' as Arch, has a simpler installer with a builtin option for
-	disk encryption.
+	disk encryption. From this I learnt to assess options (which distro to
+	choose) first, before just choosing the option I am personally more
+	familiar with. If I were to reinstall my laptop in the future, I believe
+	that I have since learned enough about Linux and how the relevant systems
+	work together that I would be able to get Arch working, however Debian is
+	still a good choice, as it is the Linux distro that Bytemark's systems most
+	commonly use.
 
 	One of the first tasks I was given was to create a system that could send
 	newsletters to customers. This was beneficial to me as it would mean
-	talking to several different people in the company for access and
-	clarifying requirements. This enabled me to get to know the people I would
-	be working with and let me know the particular system they manage. In
+	talking to (and meeting) several different people in the company for access
+	and	clarifying requirements. This enabled me to get to know the people I
+	would be working with and let me know which particular systems they
+	`oversee' (no one really has any set systems as such though). In
 	particular, provisioning of the system that the newsletter software would
 	be running on, getting it assigned to a domain and getting access to the
-	central database server all meant talking to different people. A newsletter
+	central database server all	meant talking to different people. A newsletter
 	system would help the company to easily contact all existing customers with
 	any updates; new product announcements being what was wanted in this case.
+	Bytemark uses 3 main (non-verbal) channels for communication. The primary
+	one is an instant messaging program with rooms, for general communication.
+	This is also where `urgent' alerts first get brought to your attention.
+	Second is an internal WordPress blog where you update everyone else on
+	things that have been happening, from what you've spent doing today or
+	week, something particularly interesting that just happened, to just asking
+	everyone a question about something. Lastly, there's email, including
+	several `team' mailing lists (I'm subscribed to `development' and
+	`support').
 
 	Another job was organising the migration of VMs running on a particular
 	host to another, as the existing host had a hardware fault. These VMs were
@@ -129,13 +145,26 @@
 	properly. Support is something Bytemark prides itself on, and for many
 	customers the excellent support is the main reason they choose Bytemark as
 	a hosting provider, so it's important for the company that customer's
-	questions are answered quickly, correctly, and in a friendly manner.
+	questions are answered quickly, correctly, and in a friendly manner. For
+	me, customers were generally very happy to talk to me and gave good
+	feedback (there's a form that gets sent when an email ticket is resolved).
+	In the cases where I was unable to help a customer immediately over the
+	phone, I passed them to a colleague, or asked them to email in, where I
+	would be able to either spend the time working out what needed to be done
+	or pass it to someone who is more suited to that task.
 
-	I also attended a Golang conference in London this month. As Bytemark is
-	tending to use Go for new projects, this was an excellent opportunity for
-	me and my colleagues to learn more about the language and improve the
+	I also attended a 2-day Golang conference in London this month. As Bytemark
+	is tending to use Go for new projects, this was an excellent opportunity
+	for me and my colleagues to learn more about the language and improve the
 	quality of the code that is produced, resulting in fewer bugs and problems
-	later on.
+	later on. The first day was a tutorial session, teaching the basics of Go.
+	I already knew most of this, but it was good to have gone over it again
+	in a taught session. I also picked up a couple of patterns I hadn't thought
+	of before. The second day was the conference proper, with talks. I most
+	enjoyed `Stupid Gopher Tricks', talking about corners of the language that
+	might not get thought about too often helping me to think about	different
+	approaches to programming, and `Code Analysis', about static analysis on
+	Go code, a topic that interests me generally.
 
 \paragraphnl{September}
 	In September, it came to be my turn to be on out-of-hours support for the
@@ -144,19 +173,24 @@
 	Server issues can happen at all hours of the day and part of the support
 	service Bytemark provides is 24/7 support for urgent issues. For me, this
 	was good practice at setting a good schedule and getting enough sleep, as I
-	was getting woken at all hours by alerts.
+	was getting woken at all hours by alerts like a server running out of disk
+	space and breaking websites or a server running out of memory, falling over
+	and needing to be rebooted.
 
 	At the end of the month, I was enrolled on a week long Networking course
 	with several of my colleagues. This covered basically the whole range of
 	networking systems, from how TCP packets are converted into wire signals
-	and back again, to at a high level how ISPs use BGP to communicate with
+	and back again, to (at a high level) how ISPs use BGP to communicate with
 	each other and tell each other where the best routes are to a target
 	server, essentially `what makes the Internet work'. The whole course was
 	very interesting, if intensive. It reminded me that I will always be
 	learning new things and as such will need to know how to learn effectively.
 	For Bytemark, if I have a better understanding of how networks work and are
 	put together, I can work more effectively as a Sysadmin, being better at
-	diagnosing issues such as why one server isn't talking to another.
+	diagnosing issues such as why one server isn't talking to another. For
+	example, if one computer isn't talking to another, it's important to get a
+	`traceroute' (the route the packets take) from both directions so you can
+	see exactly at which point the packets are getting stopped.
 
 \paragraphnl{October}
 	For my first major development project, I was tasked with creating a system
@@ -172,16 +206,20 @@
 
 	For this, I initially began programming my own system, however it was soon
 	pointed out to me that there was an existing open source project that
-	looked like it could do most of what was wanted of my own program. This
+	looked like it could do most of what was wanted of my own program. It's
+	built expressly with network engineers in mind (who	tend to manage lots of
+	IPs like I want to) and playing around with its own demo version, entering
+	some testing data confirmed	that it covered all the necessary points. This
 	taught me to make sure I'm not doing unnecessary work and not `reinventing
 	the wheel' as often tends to happen in computer systems. Programmers tend
 	to not take the time to understand existing code bases, dismissing them as
 	badly made and insisting that it gets rewritten. Often it is more effective
 	cost-wise and time-wise to work out the problem areas of an existing code
-	base and fix them than it is to entirely rewrite it. Testing the open
-	source software myself made me more certain that this was worth using for
-	our purposes, so the decision was made to start converting the existing
-	databases into the open source project's format.
+	base and fix them than it is to entirely rewrite it. Going further and
+	setting up an instance of the program on Bytemark's systems myself made me
+	more certain that this was worth using for our purposes, so the decision
+	was made to start converting the existing databases into the open source
+	project's format.
 
 	This month I also had my 3 month review, signifying the end of the
 	probationary time on my contract. This was a time for me and my supervisor
@@ -189,22 +227,26 @@
 	expected of me and what I expected to be achieving. For the company, this
 	ensures all their employees are happy with their work and are working well.
 	It's also for looking forward, what is expected to have been achieved by
-	the time of the next review (for me, this would be at the end of my
-	placement).
+	the time of the next review (normally in the next year but for me this
+	would be at the end of my placement). In this I learned that my supervisor
+	thought that I had settled in well and was good at interacting with
+	customers.
 
 \paragraphnl{November}
 	Around this time, the lead developer at Bytemark got very keen on having a
 	proper deployment system, with staging servers and production servers
-	being completely separate. As Bytemark has the ability to easily start up
-	new systems for just a single application. To use this setup properly,
-	a deployment program was made use of, using Ansible. This enables you to
-	completely wipe an old system, reimage it and then deploy your program with
-	a single command. Of course, a staging server needs different information
-	(which databases to connect to and so on) than the production server, which
-	is where this Ansible deployment program comes in. All of this showed me
-	how a proper deployment setup works, and the reasons why it's necessary ---
-	a staging server running on completely separate systems allows you to test
-	things safely and not have to worry about serious bugs affecting customers.
+	being completely separate. Being a hosting company, Bytemark has the
+	ability to easily start up new systems for just a single application. To
+	use this process properly, a deployment program was made use of, using
+	Ansible. This enables you to completely wipe an old system, reimage it and
+	then deploy your program with a single command. Of course, a staging server
+	needs different information (which databases connect to and so on) than the
+	production server, which is where this Ansible deployment program comes in.
+	All of this showed me how a proper deployment setup works, and the reasons
+	why it's necessary --- a staging server running on completely separate
+	systems (going as far as firewalling off the production systems to be
+	absolutely sure) allows you to test things safely and not have to worry
+	about serious bugs affecting customers.
 
 %\paragraphnl{December}
 %-wfh?\\
@@ -220,8 +262,10 @@
 	to learn more about it later on.
 
 % continuous deployment?
+
 %\paragraphnl{February}
 %\paragraphnl{March}
+
 %\paragraphnl{April}
 %\paragraphnl{May}
 %\paragraphnl{June}
