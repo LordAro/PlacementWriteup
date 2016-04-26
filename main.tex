@@ -249,9 +249,11 @@
 
 \paragraphnl{December}
 	This month was very quiet in terms of support calls and tickets (my
-	colleagues say this is expected)
-%-wfh?\\
-%-quiet?
+	colleagues say this was expected). I did a certain amount of time away from
+	the office working from home as well. The low volume of support work meant
+	that I had to find other work to do, be it learning about different sysadmin
+	tools and technologies or development work. Working from home made me learn
+	how to manage my time effectively and not get (or be) distracted.
 
 \paragraphnl{January}
 	Notable this month was me travelling to Leeds with Bytemark's Network
@@ -266,10 +268,63 @@
 	involves the `people who make the internet work' and I would like to learn
 	more about it later on.
 
-%\paragraphnl{February}
-%\paragraphnl{March}
+\paragraphnl{February}
+	I had another review this month, which overall was very positive. The main
+	take away from it I had was that I need to improve how I conduct my phone
+	calls. My line manager had no issue with what I actually said, rather the
+	pauses inbetween when I was saying anything. I tended to `um' and `er' a lot
+	when thinking about the correct answer to a customer's query. Reducing that
+	will help customers feel more at ease when sorting out their problems and
+	help reassure them that I know what I am doing (even when I don't!). I will
+	try to reduce the amount of `thinking noise' I make over the phone in the
+	future.
 
-%\paragraphnl{April}
+\paragraphnl{March}
+	As part of my dev work this month it became necessary to test on an actual
+	database server, as opposed to my own local copy. There are a number of
+	reasons for this, notably to test my own database connection code works
+	beyond `localhost'. This means connecting to separate databases for the
+	development and production environments, as they're strictly kept separate.
+	This presented an issue for one of the databases I was pulling data from, as
+	no development version of it existed. <>
+	Eventually it was decided to just place a copy of the production database
+	onto the development system, still keeping data completely separate but
+	meaning that it's accessible to development systems. This taught me that
+	sometimes it is better to get stuff done than to do it properly, within
+	reason.
+
+	At the tail end of this month Bytemark had several people join the support
+	team.
+
+\paragraphnl{April}
+	At this point my IPs project was nearing completion. However, it was being
+	very slow to complete its conversion from one DB layout to the new one.
+	Profiling my code revealed that it wasn't the code itself that was slow,
+	rather its communication with the new database layer, which was done via an
+	XML-RPC API that the new software provides. After some discussions with the
+	senior developer, it was agreed that I should look into directly connecting
+	to the backend database of the new program which would in theory be faster
+	than the XML-RPC interface. After an inspection of the database's schema and
+	of what the backend of the XML-RPC interface actually did to put the data
+	into the database.
+
+	During this rewrite process, I showed some particularly horrible code I'd
+	written to the senior developer. The code itself was building SQL queries,
+	but in such a way that the external data wasn't being sanitized at all. This
+	is a big no-no with SQL, as it leaves you open to SQL injections. Despite
+	this code never being run in the first place, my colleague was very
+	displeased with this and insisted that I remove it and rewrite it properly
+	using `prepared statements' before going any further. This taught me that
+	code quality is important, as even though in this case there was almost no
+	real danger (the data was going from one database to another) and that I
+	should never cut corners when programming, especially when security is
+	involved. This is important to the company as strong rules regarding coding
+	helps reduce the number of potential vulnerabilities in end-user facing
+	code.
+
+	Woo bytefest.
+
+
 %\paragraphnl{May}
 %\paragraphnl{June}
 %\paragraphnl{July}
