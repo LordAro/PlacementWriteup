@@ -286,15 +286,32 @@
 	beyond `localhost'. This means connecting to separate databases for the
 	development and production environments, as they're strictly kept separate.
 	This presented an issue for one of the databases I was pulling data from, as
-	no development version of it existed. <>
-	Eventually it was decided to just place a copy of the production database
-	onto the development system, still keeping data completely separate but
-	meaning that it's accessible to development systems. This taught me that
-	sometimes it is better to get stuff done than to do it properly, within
-	reason.
+	no development version of it existed. Rather than just `invent' a database
+	for the process, I decided it would be a good idea to look into the program
+	that generated and used said database. Unfortunately this program is about
+	as old as Bytemark itself, uses a framework that was old 5 years ago and a
+	fair amount of technical debt. I spoke to several colleagues about the
+	possibility of improving it and generally bringing its codebase into this
+	decade, but while they agreed that it should be done, they also told me that
+	I shouldn't waste my time trying. Despite this and me not having any
+	significant experience in Ruby, the language it was written in, I spent
+	several hours playing around with it and seeing how far I could get.
+	Eventually I had to concede that it was above my knowledge level to fix and
+	was forced to return to my IPs project. The experience made me realise that
+	I shouldn't distract myself with what would've been a very large project and
+	I should focus on the task assigned to me. Despite this, I think I'll return
+	to this later to see if I can do any better. At this point it was decided to
+	just place a copy of the production database onto the development system,
+	still keeping data completely separate but meaning that it's accessible to
+	development systems. Sometimes it's better to just get stuff done than to do
+	it properly, if you know you're going to come back to it later.
 
 	At the tail end of this month Bytemark had several people join the support
-	team.
+	team. This meant that the team had to make sure that everything was in place
+	to train them efficently and give them access to the systems that they would
+	need access to. It was interesting to me, after being at the company for 9
+	months to be watching new people being taught how Bytemark works and the
+	systems that they'd be using, and even doing a bit of training myself.
 
 \paragraphnl{April}
 	At this point my IPs project was nearing completion. However, it was being
@@ -306,7 +323,12 @@
 	to the backend database of the new program which would in theory be faster
 	than the XML-RPC interface. After an inspection of the database's schema and
 	of what the backend of the XML-RPC interface actually did to put the data
-	into the database.
+	into the database. After converting my program to do this, there was indeed
+	a significant speed increase, albeit with profiling showing that it was
+	again bottlenecked by the database connection as expected. This showed me
+	that when programming it is important to identify where code is slowing down
+	the program, understand why, and consider all possible solutions to improve
+	it.
 
 	During this rewrite process, I showed some particularly horrible code I'd
 	written to the senior developer. The code itself was building SQL queries,
@@ -322,7 +344,28 @@
 	helps reduce the number of potential vulnerabilities in end-user facing
 	code.
 
-	Woo bytefest.
+	This month Bytemark had an all-company meeting that was special enough that
+	it was spread over 2 days and had been given the name `Bytefest'. The first
+	day had several talks, one by an outside speaker on the importance of
+	staying relevant in such a fast paced industry. The computer industry has
+	been very fast paced as long as it's been around and if you do not go along
+	with these changes you can get left behind --- for an individual a lack of
+	knowledge would make it difficult to get jobs and for a company a lack of
+	new customers and revenue. There was also an update meeting by the
+	Bytemark's directors, the main takeaway from which was some exciting
+	prospects for Bytemark's future, with lots of growth planned for the next
+	few years. They explained that many companies stay small, around Bytemark's
+	size, while others are much bigger --- there aren't many in between this
+	size. Growing the company by the amount planned would mean a lot of changes
+	to the company internally which would be an interesting challenge to go
+	through. The second day was primarily talks by colleagues, explaining what
+	their main area of interest was and how it worked. This was useful as it
+	gave other colleagues a greater understanding of how that area worked and
+	will help them in their own contexts or projects. Through all of this, I was
+	on frontline support, so I had to manage my time between watching the ticket
+	queue for anything important (it had already been agreed that the queues
+	didn't have to be watched quite as closely as usual for the couple of days)
+	and between being part of the meeting and going to the talks.
 
 
 %\paragraphnl{May}
