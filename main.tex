@@ -3,6 +3,7 @@
 \usepackage{enumitem} % list indentation
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{booktabs}
+\usepackage{tabularx} % For signature column
 
 \title{Industrial Placement Accreditation Module (IPAM)}
 \author{Charles Pigott}
@@ -33,7 +34,7 @@
 	\midrule
 	\textbf{Location}                       & York Business Park, YO26 6BL \\
 	\midrule
-	\textbf{Start date}                     & 2015/07/06                   \\
+	\textbf{Start date}                     & 6th July, 2016               \\
 	\midrule
 	\textbf{Workplace supervisor name}      & Matthew Bloch                \\
 	\midrule
@@ -64,12 +65,12 @@
 	As part of my placement, I hope to learn how a hosting provider operates on
 	a day-to-day basis and how problems are dealt with. I'll have a main role
 	as a Sysadmin, which will mean learning about how to maintain servers and
-	fix any problems that may occur.
-	As Bytemark own their own data centre and quite a lot of the software used
-	is developed in-house, I have the opportunity to learn about the
-	`full stack' of how a hosting provider works, from the software used to
-	manage the virtual machines and physical hardware and the processes used in
-	developing it, down to the physical machines and cabling itself.
+	fix any problems that may occur. As Bytemark own their own data centre and
+	quite a lot of the software used is developed in-house, I have the
+	opportunity to learn about the `full stack' of how a hosting provider works,
+	from the software used to manage the virtual machines and physical hardware
+	and the processes used in developing it, down to the physical machines and
+	cabling itself.
 
 \subsubsection*{Non-technical}
 	On the non-technical side of things, I hope that I can improve how I
@@ -91,7 +92,7 @@
 	to use full disk encryption. Initially, I tried to install Arch Linux on
 	the laptop, but after being unsuccessful twice and getting conscious of the
 	time it was taking, I opted for installing Debian, which while not as
-	`bleeding edge' as Arch, has a simpler installer with a builtin option for
+	`bleeding edge' as Arch, has a simpler installer with a built-in option for
 	disk encryption. From this I learnt to assess options (which distro to
 	choose) first, before just choosing the option I am personally more
 	familiar with. If I were to reinstall my laptop in the future, I believe
@@ -237,7 +238,7 @@
 	being completely separate. Being a hosting company, Bytemark has the
 	ability to easily start up new systems for just a single application. To
 	use this process properly, a deployment program was made use of, using
-	Ansible. This enables you to completely wipe an old system, reimage it and
+	Ansible. This enables you to completely wipe an old system, re-image it and
 	then deploy your program with a single command. Of course, a staging server
 	needs different information (which databases connect to and so on) than the
 	production server, which is where this Ansible deployment program comes in.
@@ -272,12 +273,12 @@
 	I had another review this month, which overall was very positive. The main
 	take away from it I had was that I need to improve how I conduct my phone
 	calls. My line manager had no issue with what I actually said, rather the
-	pauses inbetween when I was saying anything. I tended to `um' and `er' a lot
-	when thinking about the correct answer to a customer's query. Reducing that
-	will help customers feel more at ease when sorting out their problems and
-	help reassure them that I know what I am doing (even when I don't!). I will
-	try to reduce the amount of `thinking noise' I make over the phone in the
-	future.
+	pauses in-between when I was saying anything. I tended to `um' and `er' a
+	lot when thinking about the correct answer to a customer's query. Reducing
+	that will help customers feel more at ease when sorting out their problems
+	and help reassure them that I know what I am doing (even when I don't!). I
+	will try to reduce the amount of `thinking noise' I make over the phone in
+	the future.
 
 \paragraphnl{March}
 	As part of my dev work this month it became necessary to test on an actual
@@ -289,13 +290,13 @@
 	no development version of it existed. Rather than just `invent' a database
 	for the process, I decided it would be a good idea to look into the program
 	that generated and used said database. Unfortunately this program is about
-	as old as Bytemark itself, uses a framework that was old 5 years ago and a
-	fair amount of technical debt. I spoke to several colleagues about the
-	possibility of improving it and generally bringing its codebase into this
-	decade, but while they agreed that it should be done, they also told me that
-	I shouldn't waste my time trying. Despite this and me not having any
-	significant experience in Ruby, the language it was written in, I spent
-	several hours playing around with it and seeing how far I could get.
+	as old as Bytemark itself, uses a framework that's been out of support for 5
+	years and has a fair amount of technical debt. I spoke to several colleagues
+	about the possibility of improving it and generally bringing its codebase
+	into this decade, but while they agreed that it should be done, they also
+	told me that I shouldn't waste my time trying. Despite this and me not
+	having any significant experience in Ruby, the language it was written in, I
+	spent several hours playing around with it and seeing how far I could get.
 	Eventually I had to concede that it was above my knowledge level to fix and
 	was forced to return to my IPs project. The experience made me realise that
 	I shouldn't distract myself with what would've been a very large project and
@@ -308,10 +309,10 @@
 
 	At the tail end of this month Bytemark had several people join the support
 	team. This meant that the team had to make sure that everything was in place
-	to train them efficently and give them access to the systems that they would
-	need access to. It was interesting to me, after being at the company for 9
-	months to be watching new people being taught how Bytemark works and the
-	systems that they'd be using, and even doing a bit of training myself.
+	to train them efficiently and give them access to the systems that they
+	would need access to. It was interesting to me, after being at the company
+	for 9 months to be watching new people being taught how Bytemark works and
+	the systems that they'd be using, and even doing a bit of training myself.
 
 \paragraphnl{April}
 	At this point my IPs project was nearing completion. However, it was being
@@ -367,10 +368,202 @@
 	didn't have to be watched quite as closely as usual for the couple of days)
 	and between being part of the meeting and going to the talks.
 
+\paragraphnl{May}
+	Between my support rota this month, I helped with a push to get all the
+	hosts for the (newer) cloud VM system upgraded to the latest software
+	version. All the hosts run programs which manage the VMs running on them and
+	until now it hadn't been kept up to date all that well, leading to issues on
+	the hosts that had already been fixed on the newer versions of the software.
+	This increases the workload for support staff such as myself and in extreme
+	cases caused needless downtime for customers. Working with my colleagues, I
+	was given a host that needed to be emptied of existing customers --- on the
+	new platform this can be done seamlessly without needing downtime for the
+	servers on the host --- upgraded to the latest version of the host's
+	software, and made ready to be used again. Coordinating this with my
+	colleagues was important so that there was no confusion as to who was doing
+	what. This was primarily done with an issue tracker system. Each host would
+	have a certain number of things that needed doing to them to get them
+	upgraded, so to mark that you were doing that particular thing, you would
+	assign the issue to yourself, carry out the work, then resolve it when you
+	were finished.
 
-%\paragraphnl{May}
-%\paragraphnl{June}
-%\paragraphnl{July}
+\paragraphnl{June}
+	I asked the senior developer to take a look at the development work I'd been
+	doing. As part of merging the two databases, it's important to retain as
+	much as information as possible. My colleague quickly found some cases where
+	IPs were straight up missing and others where information about IPs and
+	where they were routed to was absent. He told me that since testing such a
+	data set wasn't going to work, I'd have to do an amount of manual acceptance
+	testing. That is, reviewing the output data set and checking manually that
+	everything I was expected was there. Checking every record isn't feasible,
+	so I would pick a few of each `type' of record, dividing them up into groups
+	with notable attributes, e.g.~servers with more than one IP address assigned
+	to them and blocks of unallocated but reserved IPs.
 
+\paragraphnl{July}
+	Last time I did a legacy VM migration, I found it a little bit difficult to
+	find available disk space on other host machines. Some investigation showed
+	that the live VMs on the host weren't the major cause of the disk space
+	usage, rather the VMs that had been deactivated at some point in the past.
+	Deactivated VMs aren't removed automatically, just in case the customer
+	finds they do in fact want the data on the machine. As there are no new
+	VMs being commissioned on the legacy platform, the number of deactivated
+	machines on the hosts slowly builds up, some dating back as far as 2014
+	(when the hosts were commissioned). With a small amount of scripting, I got
+	a list of all deactivated VMs on each host. At this point, I talked to
+	various colleagues about what I was planning to make sure this was a good
+	idea. First it was agreed that only VMs that had been turned off for more
+	than 6 months would be deleted. My colleagues also helped me add various
+	safeguards to my script to make sure I wasn't deleting anything that was
+	still running or was still being paid for. Customer's data is important to
+	them, and deleting their old data (or worse, their live data) and then
+	realising they were still paying for it would give a very bad impression of
+	the company. With a final manual review stage of the process, I set the
+	script running and cleaned up a significant amount of disk space from the
+	hosts.
+
+	Later that month, it was decided that we'd start to retire the oldest of the
+	legacy VM host machines, as they are larger and more power-hungry and so are
+	more expensive to run. Decommissioning these hosts will save the company
+	money and free up rack space for other servers. As usual, customers would be
+	given a weeks notice of the scheduled downtime to make sure the downtime
+	wouldn't significantly affect anything important of theirs and would be
+	given the opportunity to rearrange to an earlier time.
+
+	I also finally completed my ``distraction'' development project, to update
+	the `ancient' network organiser program to the point where it was updated to
+	the point where it could be redeployed on a newer system using the
+	established deployment methods. It still has a lot of work to go on it, but
+	changes can now be tested much more easily and deployed live in incremental
+	steps, further helping testing. Actually rolling it out was a little tricky,
+	as due to a bug in the deployment process it was then unreachable to other
+	programs, nearly causing a related program to block a load of IP addresses
+	that shouldn't have been. This could've caused outages for customers but
+	luckily there was a fail-safe that had been put in place previously that
+	stopped the change from going live.
+% review?
+
+\section*{Part 4 --- Phase (1 and 2) Review}
+\subsection*{Planned learning completed}
+	Overall, I believe that most of my learning objectives were achieved. I've
+	learnt many new skills to do with system operation and diagnostic skills as
+	a systems administrator, fixing problems that arise. I've also increased my
+	skills as a developer by working on an actual project written by others and
+	also interacting and working with others, having to collaborate with them.
+
+	I would've liked to do more work in the datacentre. I did some work there,
+	building some servers and running some cables, but not very often when and
+	only when I had nothing (much) else to do.
+
+	As a member of the support team, I've greatly improved my people skills and
+	being able to talk people through their problems over the phone. Using the
+	phone is not something I've ever been particularly confident doing as it
+	requires you to have to think quickly and answer people's queries in a short
+	amount of time, which is not something I was very good at before. Something
+	I've marginally improved at is keeping a schedule. I've got better at
+	getting up and getting ready to leave the house so that I can get to work in
+	time, but I'm still not good at mornings. To compensate, when necessary I'm
+	quite willing to work a bit later so that I make up the number of hours per
+	week, but that can limit my own free time outside of work.
+
+\subsection*{Summary assessment of achievements against SFIA skills}
+\paragraphnl{Network support (NTAS)}
+%Identifies and resolves network problems following agreed procedures.
+	As part of my support work I often helped customers resolve their networking
+	issues. This could range from misconfigured network interfaces to diagnosing
+	exactly where in the route between their computer and their server was
+	causing issues. Common tools for this would be `traceroute' or `mtr'.
+
+%Uses network management software and tools to collect agreed performance
+%statistics.
+	While monitoring the legacy VM hosts, I wrote a script which collected
+	various statistics from them, including load, disk usage and number of
+	virtual machines currently running on them. This will help people in the
+	future find any misbehaving hosts before they cause any significant problems
+	for customers.
+
+%Carries out agreed network maintenance tasks.
+	I also spent some time going through disabled servers and checking that
+	their IPs had been removed from them properly as the process for removal for
+	any additional IPs is a manual one and sometimes got forgotten. As part of
+	this I found several ranges of IPs that could be freed up. As the amount of
+	free IPv4 addresses gets lower, they become more valuable. Finding these is
+	important as they can be reused else where, saving the company money.
+
+\paragraphnl{Service desk and incident management (USUP)}
+%Receives and handles requests for support following agreed procedures.
+	A significant part of my industrial placement was to deal with support
+	queries from customers. A number of these requests would involve following
+	procedures carefully. A notable example is decommissioning a dedicated
+	server where there are several steps to make sure the server is properly
+	flagged as retired or available for reuse (depending on its age) and that
+	customer data is securely deleted in the process.
+
+%Responds to requests for support by providing information to enable problem
+%resolution and promptly allocates unresolved calls as appropriate.
+	When responding to support queries, I always tried to stay inside Bytemark's
+	SLA (Support Level Agreement), which essentially says that queries should be
+	responded to within 4 working hours, less for managed or urgent queries. If
+	I am unable to help for whatever reason, be it for a lack of knowledge in
+	that subject area (in depth sales calls) or a lack of permissions (firewall
+	changes), I make sure I know who's best placed to help with the query and
+	pass it to them if they're available, to ensure greatest customer
+	satisfaction.
+
+	All support queries are kept archived in a ticketing system, which actually
+	contains every support query in the company's history. This ensures that
+	any interaction with the customer in the past can be referred to for
+	information purposes and for rudimentary checking of the support agent's
+	tickets for customer happiness and well-being.
+
+%Maintains records and advises relevant persons of actions taken.
+	In the case where I would be doing something that could possibly affect
+	customer data or where I was unsure of the best answer, I would talk to a
+	relevant colleague who was best placed to either check what I was doing
+	wasn't going to have unintended consequences or help me respond best. If I
+	was unsure who was best placed to talk to, I would ask my supervisor where I
+	should go next.
+
+\subsection*{Workplace supervisor assessment (All phases)}
+	Charles has slotted into the support team \textbf{really} well. We'll be sad
+	to see him go.
+
+	He quickly picked up our internal systems and demonstrated an already sound
+	understanding of Linux sysadmin work. In particular, he has taken the reigns
+	when it comes to looking after our legacy virtual hosts. He has created
+	scripts to make migrations faster/more reliable and has also been active in
+	consolidating the hosts, reducing our overall overheads.
+
+	Charles has also worked on our internal NIPAP installation, something that
+	we will likely continue to use for some time. He's leaving a legacy.
+
+	Being exposed to real world customer problems has allowed Charles to study
+	and learn many new software technologies and associated skills.
+
+	On a personal level, Charles has really come out of his shell. He was
+	initially very quiet and reserved, even when responding to customer queries
+	by email. This has improved vastly and his email responses are no longer one
+	liners; Charles now takes the time to consider the customer and explain the
+	problem. Charles has worked well with his peers and has provided valuable
+	input to various technical issues.
+
+	Overall, Charles will be leaving us with a much greater understanding of how
+	the tech industry works and where his knowledge is applied in the real
+	world.
+
+\subsection*{Signatures and approval}
+\def\arraystretch{2}
+\noindent\begin{tabularx}{\textwidth}{llXl}
+	 & Name & Signature & Date \\
+	\toprule
+	\textbf{Placement student}    & Charles Pigott      & & \\
+	\midrule
+	\textbf{Workplace supervisor} & Matthew Bloch       & & \\
+	\midrule
+	\textbf{Placement supervisor} & Paul Keeler         & & \\
+	\midrule
+	\textbf{Academic authority}   & Prof.~Susan Stepney & & \\
+	\bottomrule
+\end{tabularx}
 
 \end{document}
